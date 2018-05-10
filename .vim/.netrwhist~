@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/aich/.AUR'
+let g:netrw_dirhist_2='/home/aich'
+let g:netrw_dirhist_3='/home'
+let g:netrw_dirhist_4='/home/aich/.config/polybar'
+let g:netrw_dirhist_5='/home/aich/.config'
+let g:netrw_dirhist_6='/home/aich/.config/surfraw'
+let g:netrw_dirhist_7='/home/aich/.config/surfraw/elvi'
+let g:netrw_dirhist_8='/home/aich/.synergy'
+let g:netrw_dirhist_9='/home/aich/.synergy/SSL'

@@ -1,0 +1,23 @@
+rofi.color-enabled: true
+rofi.color-window: argb:aa000000, argb:000099ff, argb:000099ff
+rofi.color-normal: argb:00000000, #aaaaaa, argb:00000000, argb:88555555, #0099ff
+rofi.color-active: argb:00000000, #dfdfdf, argb:00000000, argb:88555555, #dfdfdf
+rofi.color-urgent: argb:00000000, #dc322f, argb:00000000, argb:6a5f5f5f, #dc322f
+*.foreground:   #a9a9a9
+*.background:   #000000
+*.cursorColor:  #a9a9a9
+*.color0:       #2a2e32
+*.color1:       #c0392b
+*.color9:       #f44f4f
+*.color2:       #218058
+*.color10:      #27ae60
+*.color3:       #fdbc4b
+*.color11:      #fdbc4b
+*.color4:       #2980b9
+*.color12:      #0099ff
+*.color5:       #8e44ad
+*.color13:      #af81ff
+*.color6:       #2980b9
+*.color14:      #0099ff
+*.color7:       #a5a5a5
+*.color15:      #a9a9a9

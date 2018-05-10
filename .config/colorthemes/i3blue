@@ -1,0 +1,6 @@
+client.focused	#0099ff #0099ff #000000 #0099ff   
+client.focused_inactive	#aaaaaa #aaaaaa #000000 #aaaaaa   
+client.unfocused	#666666 #666666b #000000 #66666 
+client.urgent	#ff0000 #ff0000 #000000 #ff0000  
+client.background	#000000
+

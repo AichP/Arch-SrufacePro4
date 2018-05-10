@@ -1,0 +1,6 @@
+
+i3.conf /home/aich/.config/i3/config
+polybar.conf  /home/aich/.config/polybar/config
+Xresources.conf /home/aich/.Xresources
+configlist.conf /home/aich/.config/rofi/configlist
+compton.conf /home/aich/.config/compton.conf

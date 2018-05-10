@@ -1,0 +1,213 @@
+set $mod Mod1
+
+# is used in the bar {} block below.
+font pango:NotoSans-Regular 12
+
+#color class		border  bg	text	indicator child_border
+client.focused	#0099ff #0099ff #000000 #0099ff
+client.focused	#0099ff #0099ff #000000 #0099ff
+client.unfocused	#666666 #666666b #000000 #66666
+client.urgent	#ff0000 #ff0000 #000000 #ff0000
+client.background	#000000
+
+#set monitornames
+set $monitor1 "edp-1"
+#set $monitor2 "DP-5"
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec termite
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi more configuration in .Xresources
+bindsym $mod+d exec rofi -show
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus up
+bindsym $mod+l focus down
+bindsym $mod+odiaeresis focus right
+
+# alternatively, you can use the cursor keys:
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move down
+bindsym $mod+Shift+odiaeresis move right
+
+# alternatively, you can use the cursor keys:
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+#Shadows and Transparency by compton
+exec --no-startup-id compton -bzcCG --backend glx --vsync opengl-swc --paint-on-overlay -r6 -l-8 -t-8 --blur-background --blur-kern '15,15,0.884706,0.899200,0.911649,0.921963,0.930066,0.935897,0.939413,0.940588,0.939413,0.935897,0.930066,0.921963,0.911649,0.899200,0.884706,0.899200,0.913931,0.926585,0.937067,0.945303,0.951229,0.954803,0.955997,0.954803,0.951229,0.945303,0.937067,0.926585,0.913931,0.899200,0.911649,0.926585,0.939413,0.950041,0.958390,0.964399,0.968022,0.969233,0.968022,0.964399,0.958390,0.950041,0.939413,0.926585,0.911649,0.921963,0.937067,0.950041,0.960789,0.969233,0.975310,0.978974,0.980199,0.978974,0.975310,0.969233,0.960789,0.950041,0.937067,0.921963,0.930066,0.945303,0.958390,0.969233,0.977751,0.983881,0.987578,0.988813,0.987578,0.983881,0.977751,0.969233,0.958390,0.945303,0.930066,0.935897,0.951229,0.964399,0.975310,0.983881,0.990050,0.993769,0.995012,0.993769,0.990050,0.983881,0.975310,0.964399,0.951229,0.935897,0.939413,0.954803,0.968022,0.978974,0.987578,0.993769,0.997503,0.998751,0.997503,0.993769,0.987578,0.978974,0.968022,0.954803,0.939413,0.940588,0.955997,0.969233,0.980199,0.988813,0.995012,0.998751,0.998751,0.995012,0.988813,0.980199,0.969233,0.955997,0.940588,0.939413,0.954803,0.968022,0.978974,0.987578,0.993769,0.997503,0.998751,0.997503,0.993769,0.987578,0.978974,0.968022,0.954803,0.939413,0.935897,0.951229,0.964399,0.975310,0.983881,0.990050,0.993769,0.995012,0.993769,0.990050,0.983881,0.975310,0.964399,0.951229,0.935897,0.930066,0.945303,0.958390,0.969233,0.977751,0.983881,0.987578,0.988813,0.987578,0.983881,0.977751,0.969233,0.958390,0.945303,0.930066,0.921963,0.937067,0.950041,0.960789,0.969233,0.975310,0.978974,0.980199,0.978974,0.975310,0.969233,0.960789,0.950041,0.937067,0.921963,0.911649,0.926585,0.939413,0.950041,0.958390,0.964399,0.968022,0.969233,0.968022,0.964399,0.958390,0.950041,0.939413,0.926585,0.911649,0.899200,0.913931,0.926585,0.937067,0.945303,0.951229,0.954803,0.955997,0.954803,0.951229,0.945303,0.937067,0.926585,0.913931,0.899200,0.884706,0.899200,0.911649,0.921963,0.930066,0.935897,0.939413,0.940588,0.939413,0.935897,0.930066,0.921963,0.911649,0.899200,0.884706,'
+ 
+
+#Autostart Programs
+#exec --no-startup-id synergy
+#exec --no-startup-id KeePass
+exec --no-startup-id nm-applet
+exec --no-startup-id onboard
+exec --no-startup-id touchegg
+
+#Assign workspaces to Monitors
+workspace 1 output $monitor1
+workspace 2 output $monitor1
+workspace 3 output $monitor1
+workspace 4 output $monitor1
+workspace 5 output $monitor1
+workspace 6 output $monitor1
+workspace 7 output $monitor1
+workspace 8 output $monitor1
+workspace 9 output $monitor1
+workspace 10 output $monitor1
+
+#cycle through workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+#KeePass autotype not needed with KeePassXC
+#bindsym $mod+Shift+a exec "keepass -auto-type"
+
+#Lock with i3lock
+bindsym $mod+Shift+x exec /home/aich/.config/lock/lock.sh
+#random background
+exec_always bash $HOME/.config/wallpaper/randombackground.sh
+
+#Application keybindings
+bindsym Mod4+e exec Thunar 
+bindsym Mod4+s exec spotify
+bindsym Mod4+f exec firefox
+bindsym Mod4+g exec gimp
+bindsym Mod4+k exec keepassxc
+
+#float pavucontrol under the sound slider
+for_window [class="Pavucontrol"] floating enable move position 1725 75 
+
+#Assing Programs to workspaces, and focus them when opening
+for_window [class="Spotify"] move to workspace 8
+
+#Start Programs in floating mode
+#for_window [class="Thunar"] floating enable
+for_window [class="KeePass"] floating enable
+
+#set i3wm-gaps parameters
+new_window 1pixel  	# no border for windows
+smart_borders on        # no borders when only one window is open
+gaps outer 5		# outer gaps
+gaps inner 5
+
+#start polybars
+exec_always bash $HOME/.config/polybar/launch.sh
+
+#Add Functionality to Function keys
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle 
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86TouchpadToggle exec $rofi
+bindsym XF86Calculator exec galculator &
+
+##Set Monitor layout 
+#exec_always --no-startup-id xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 2736x1824 --pos 0x0 --rotate normal --output DP-2 --off  
+
+#Adjust Keyboard again
+exec_always --no-startup-id "setxkbmap -layout de -option"
+
+exec --no-startup-id "libinput-gestures-setup start"

@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# AUTHOR: aichp
+#
+# DATE: 2017-09-08
+#
+# DESC: Elvi to open office
+# elvis: office		-- open office (https://login.microsoftonline.com/)
+. surfraw || exit 1
+
+w3_usage_hook () {
+    cat <<EOF
+Usage: $w3_argv0 [options] 
+Description:
+  open office (https://login.microsoftonline.com/)
+EOF
+    w3_global_usage
+}
+
+w3_parse_option_hook () {
+    opt=$1
+    optarg=$2
+    case $opt in
+	-results=*) setopt   $SURFRAW_results $optarg	;;
+	*) return 1 ;;
+    esac
+    return 
+}
+w3_config
+w3_parse_args $@
+if test -z $w3_args; then
+    w3_browse_url https://login.microsoftonline.com/
+else
+   
+    escaped_args=`w3_url_of_arg $w3_args`
+    w3_browse_url https://login.microsoftonline.com//${escaped_args}
+
+
+
+fi

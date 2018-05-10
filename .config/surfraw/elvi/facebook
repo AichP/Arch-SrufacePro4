@@ -1,0 +1,27 @@
+
+#!/bin/sh
+#
+# AUTHOR: aichp
+#
+# DATE: 2017-08-27
+#
+# DESC: Elvi to open facebook
+# elvis: facebook		-- open facebook (https://www.facebook.com/)
+. surfraw || exit 1
+
+w3_usage_hook () {
+    cat <<EOF
+Usage: $w3_argv0 [options] 
+Description:
+  open facebook (https://www.facebook.com/)
+EOF
+    w3_global_usage
+}
+
+w3_config
+w3_parse_args $@
+if test -z $w3_args; then
+    w3_browse_url https://www.facebook.com/
+else
+    w3_browse_url https://www.facebook.com/
+fi

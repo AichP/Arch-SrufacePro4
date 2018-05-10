@@ -1,0 +1,27 @@
+
+#!/bin/sh
+#
+# AUTHOR: aichp
+#
+# DATE: 2017-08-27
+#
+# DESC: Elvi to open unixporn
+# elvis: unixporn		-- open unixporn (https://www.reddit.com/r/unixporn/)
+. surfraw || exit 1
+
+w3_usage_hook () {
+    cat <<EOF
+Usage: $w3_argv0 [options] 
+Description:
+  open unixporn (https://www.reddit.com/r/unixporn/)
+EOF
+    w3_global_usage
+}
+
+w3_config
+w3_parse_args $@
+if test -z $w3_args; then
+    w3_browse_url https://www.reddit.com/r/unixporn/
+else
+    w3_browse_url https://www.reddit.com/r/unixporn/
+fi

@@ -1,0 +1,293 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+background = #88000000
+foreground = #aaa
+foreground-alt = #555
+primary = #dfdfdf
+secondary = #dfdfdf
+alert = #DC322F
+
+;[global/wm]
+;margin-bottom = 5
+[monitors]
+monitor2 = ${env:Monitor:DP-5}
+monitor1 = ${env:Monitor:-eDP-1}
+
+[bar/vga1top]
+monitor = ${monitors.monitor1}
+width = 100%
+height = 3% 
+radius = 0
+;fixed-center = true
+dpi = 160
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+line-color = #f00
+
+border-top-size= 0
+;border-left-size = 550
+:border-right-size = 550 
+border-color = #00000000
+
+padding-left = 3 
+padding-right = 3
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = NotoSans-Regular:size=16;5
+font-1 = fa:pixelsize=5;3
+font-2 = Material Design Icons:size=16;6
+font-3 = NotoSans-Regular:size=5:antialias=false;5
+font-4 = Futura:size=15;3
+font-5 = Material Design Icons:size:10;6
+font-6 = Notosansmono:size=14;4
+
+modules-left = colors i3 spotifyprevious spotifyplaypause spotifynext spotify
+;modules-center = date
+modules-right = volume lightup lightdown battery date powermenu
+;modules-right = spotify spotifyprevious spotifyplaypause spotifynext
+
+tray-position = right 
+tray-detached = true 
+tray-padding = 20 
+;tray-transparent = true
+tray-offset-x = -1200
+tray-maxsize = 42
+tray-scale = 1
+
+tray-background = #88000000
+
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+enable-scroll = true
+wrapping-scroll = true
+format = <label-state> <label-mode>
+
+ws-icon-0 = 0; 
+ws-icon-1 = 1;
+ws-icon-2 = 2;
+ws-icon-3 = 3;
+ws-icon-4 = 4;
+ws-icon-5 = 5;
+ws-icon-6 = 6;
+ws-icon-7 = 7;
+ws-icon-8 = 8;
+ws-icon-9 = 9; 
+ 
+ws-icon-default = X 
+label-focused-font = 3
+label-unfocused-font = 3
+label-visible-font = 3
+label-urgent-font = 3
+
+label-mode = %mode% 
+label-mode-padding = 1 
+label-mode-background = #e60053
+
+label-focused = %icon%  
+label-focused-foreground = ${colors.primary}
+
+label-focused-padding = 1
+
+label-unfocused = %icon%
+label-unfocused-padding = 1
+
+label-visible = %icon%
+label-visible-foreground = ${colors.primary}
+label-visible-padding = 1
+
+label-urgent = %icon%
+label-urgent-foreground = #bd2c40
+;label-urgent-background = #bd2c40
+label-urgent-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+padding-left = 3
+padding-right = 3
+
+format = CPU <label>
+
+label = %percentage%%
+label-foreground = ${colors.primary}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = 
+date-alt = %d.%m 
+
+time-alt = %H:%M %A
+time = %H:%M
+
+label-font = 7
+label = %time% %date%
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = %{A3:/home/aich/.scripts/pavuCloseUnfocused.sh &:} <bar-volume> %{A}
+;format-volume = <bar-volume>
+;click-left = 
+label-muted = "         "
+
+bar-volume-width = 10 
+
+bar-volume-gradient = false 
+bar-volume-indicator = 
+bar-volume-indicator-font = 6
+bar-volume-indicator-foreground = ${colors.primary} 
+bar-volume-fill = ─
+bar-volume-fill-foreground = ${colors.primary}
+bar-volume-empty = ─
+
+[module/pavolume]
+type = custom/text
+content = ""
+click-left = sh ~/.scripts/pavuCloseUnfocused.sh
+format-foreground = ${colors.primary}
+
+[module/spotify]
+type = custom/script
+exec = sh ~/.config/polybar/spotify.sh
+interval = 1
+label-font = 7
+label = %output:0:30:...%
+label-foreground = ${colors.foreground}
+click-left = exec i3-msg workspace 8
+
+[module/powermenu]
+type = custom/menu
+expand-right = false
+
+;format-spacing = 0.8
+label-open-font = 3
+label-open = 
+label-open-foreground = ${colors.primary}
+label-close = "  " 
+label-close-foreground = ${colors.primary}
+label-separator = 
+label-separator-foreground = ${colors.foreground-alt}
+menu-0-0-background = #88555555
+menu-0-0 =  "    "
+menu-0-0-exec = exec termite -e "sudo /home/aich/.scripts/rebootiIntoWin10.sh" --hold 
+menu-0-1-background = #88555555
+menu-0-1 = "    "
+menu-0-1-exec = exec termite -e "sudo systemctl reboot --firmware-setup" --hold 
+menu-0-2-background = #88555555
+menu-0-2 = "    "
+menu-0-2-exec = exec reboot
+menu-0-3-background = #88555555
+menu-0-3 = "    "
+;menu-0-3-exec = exec termite -e "/home/aich/.scripts/lockAndSleep.sh "
+menu-0-3-exec = exec sudo pm-suspend | /home/aich/.config/lock/lock.sh
+menu-0-4-background = #88555555
+menu-0-4-font = 3
+menu-0-4 = "    "
+menu-0-4-exec = exec shutdown now
+
+[module/spotifynext]
+type = custom/script
+exec = sh ~/.config/polybar/spotifynext.sh
+click-left = exec xdotool key XF86AudioNext
+label-foreground = ${colors.secondary}
+
+[module/spotifyplaypause]
+type = custom/script
+interval = 1
+exec = sh ~/.config/polybar/spotifyplay.sh
+click-left = exec xdotool key XF86AudioPlay
+label-foreground = ${colors.secondary}
+
+[module/spotifyprevious]
+type = custom/script
+exec = sh ~/.config/polybar/spotifyprev.sh
+click-left = exec xdotool key XF86AudioPrev
+label-foreground = ${colors.secondary}
+
+[settings]
+screenchange-reload = true
+
+[module/wallpaper]
+type = custom/text
+content = "  "
+click-left = exec /home/aich/.wallpaper/randombackground.sh
+content-foreground = ${colors.primary}
+content-background = ${colors.background}
+
+[module/[global/wm]
+margin-top = 1 
+margin-bottom = 1
+
+; vim:ft=dosinii
+[module/empty]
+type = custom/script
+exec = echo
+
+[module/battery]
+type = internal/battery
+
+;full-at = 99
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ADP1
+
+poll-interval = 5
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = 
+label-discharging =
+label-alt-charging = %percentage%%
+label-alt-discharging = %percentage%%
+label-full-font = 2
+label-full = 
+; Only applies if <ramp-capacity> is used
+ramp-capacity-font = 2
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+[module/lightup]
+type=custom/text
+content = 
+click-left = exec light -A 10
+[module/lightdown]
+type=custom/text
+content = 
+click-left = exec light -U 10
+content-font = 2
+
+

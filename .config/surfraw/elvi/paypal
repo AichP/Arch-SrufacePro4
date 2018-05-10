@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# AUTHOR: aichp
+#
+# DATE: 2018-04-25
+#
+# DESC: Elvi to open paypal
+# elvis: paypal		-- open paypal (https://www.paypal.com/signin)
+. surfraw || exit 1
+
+w3_usage_hook () {
+    cat <<EOF
+Usage: $w3_argv0 [options] 
+Description:
+  open paypal (https://www.paypal.com/signin)
+EOF
+    w3_global_usage
+}
+
+w3_parse_option_hook () {
+    opt=$1
+    optarg=$2
+    case $opt in
+	-results=*) setopt   $SURFRAW_results $optarg	;;
+	*) return 1 ;;
+    esac
+    return 
+}
+w3_config
+w3_parse_args $@
+if test -z $w3_args; then
+    w3_browse_url https://www.paypal.com/signin
+else
+   
+    escaped_args=`w3_url_of_arg $w3_args`
+    w3_browse_url https://www.paypal.com/signin/${escaped_args}
+
+
+
+fi

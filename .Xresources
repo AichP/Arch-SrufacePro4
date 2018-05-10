@@ -1,0 +1,78 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: argb:aa000000, argb:000099ff, argb:000099ff
+rofi.color-normal: argb:00000000, #aaaaaa, argb:00000000, argb:88555555, #0099ff
+rofi.color-active: argb:00000000, #dfdfdf, argb:00000000, argb:88555555, #dfdfdf
+rofi.color-urgent: argb:00000000, #dc322f, argb:00000000, argb:6a5f5f5f, #dc322f
+rofi.show-icons: true
+rofi.drun-icon-theme: Papirus-Dark
+rofi.location: 2
+rofi.yoffset: -20 
+rofi.width: 70%
+rofi.kb-row-select: Tab
+rofi.kb-row-tab: Control+space
+rofi.combi-modi: web:/home/aich/.config/rofi/web.sh,run
+rofi.show: combi
+rofi.modi: combi,drun,web:/home/aich/.config/rofi/web.sh,kill:/home/aich/.config/rofi/kill.sh,theme:/home/aich/.config/rofi/colorswitcher.sh
+rofi.hide-scrollbar: true
+rofi.lines: 9
+rofi.bw: 0
+rofi.padding: 20
+rofi.line-margin: 15 
+rofi.separator-style: solid 
+rofi.columns: 4
+rofi.font: NotoSans Mono 12
+rofi.sidebar-mode: true
+rofi.disable-history: false
+rofi.dpi: 180
+rofi.click-to-exit: false
+!-X11 Settings-----------------------------------------------
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+XTerm*vt100*translations:   #override                       \n \
+    Shift Ctrl <KeyPress>C: copy-selection(CLIPBOARD)       \n \
+    Shift Ctrl <KeyPress>V: insert-selection(CLIPBOARD)     \n \
+    Shift Ctrl <Key>N:      spawn-new-terminal()            \n
+
+! special
+*.foreground:   #a9a9a9
+*.background:   #000000
+*.cursorColor:  #a9a9a9
+! black
+*.color0:       #2a2e32
+! red
+*.color1:       #c0392b
+*.color9:       #f44f4f
+
+! green
+*.color2:       #218058
+*.color10:      #27ae60
+
+! yellow
+*.color3:       #fdbc4b
+*.color11:      #fdbc4b
+
+! blue
+*.color4:       #2980b9
+*.color12:      #0099ff
+
+! magenta
+*.color5:       #8e44ad
+*.color13:      #af81ff
+
+! cyan
+*.color6:       #2980b9
+*.color14:      #0099ff
+
+! white
+*.color7:       #a5a5a5
+*.color15:      #a9a9a9
+
