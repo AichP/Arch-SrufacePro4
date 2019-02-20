@@ -1,0 +1,65 @@
+lizenz:
+server und ui fehlt.
+Ui nicht eingebunden in Hauptprogramm. 
+Tablet mit Brille verbunden 50%
+Lizensserver 0%
+Lizensserver mit datenbank verschlüsseln!
+Datenbanksicherheit.
+Tablet wird nicht auf tablet gespeichert.
+Passwort wird an lizenZverwaltungsserver.
+Fertige Lizensserver programme?
+-> Assets Scripts Lizensserver alt neu
+
+Instruktor Ansicht:
+Steuerelemente sind da
+szenarien werden nicht in hierarchie dargestellt, muss auch in hololens dargestellt werden.
+Verbundene Hololenses werden noch nicht angezeigt. Sind aber schon gespeichert muss ma nur in Liste Anzeigen, Liste existiert bereits.
+
+Bibiothek:
+Buttons keine Funktionalität, Bugfixes nötig
+In Documentation steht was geht was nicht.
+70%
+
+Datenbank:
+Nachfolgende events die im szenario ausgelöst werden können / states existieren noch nicht in der Datenbank.
+Datenbank Sicherheit.
+70%
+
+Update:
+Patcher für Tablet applikation funktioniert. 90%.
+Patcher für Hololens. 0 %
+Jedes objektmodell mit neuen Scripts muss geupdated werden.
+
+Auswertung:
+Beim Instructor Datalog, alles in ein PDF zusammenfassen.
+Geloggt wirds. 100%
+PDF generieren fehlt.
+insgesammt 70%
+
+Waffeneinbindung:
+Hololense seitig 80% evtl. 100%
+Kommunikation funktioniert, Trigger betätigen funktioniert.
+Tabletseitig, muss szenario definiert werden. zu 40% Szenarion editor.
+
+Datenbank Modell hinzufügen.
+Objekt wird nur Pfad gespeichert.
+Identisch mit Lizensserver.
+Nicht über Rest service.
+
+Modelle aus der Datenbank werden aus Datenbank geladen.
+
+Vitaldaten
+Puls funktioniert übers EKG. Bioplugs EGA EDA elektro thermale aktivität-> Hautleitaktivität Temperatur und Respiration.
+Rest middleware anfragen und Anzeige fehlen.
+Configurieren teilweise.
+70%
+Graphische darstellung in unity schwierig darstellung von Diagrammen?
+zahlen anzeigen funktioniert.
+Diagramme 1-2 Wochen.
+
+
+Verbindung Tablet Hololens. Bugs ohne Lösungen, da relativ neu und support nicht gut.
+Mario. Verbindung hololens tablet -server (server optional)
+definiertes szenario muss auf hololens ausführbarsein.
+Patchingserver muss funktionieren.
+

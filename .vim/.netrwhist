@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/aich/linux-surface'
 let g:netrw_dirhist_2='/home/aich/.fonts'
 let g:netrw_dirhist_3='/home/aich/.config'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/home'
 let g:netrw_dirhist_6='/'
 let g:netrw_dirhist_7='/home/aich/.config/colorthemes'
 let g:netrw_dirhist_8='/home/aich/.config/colorthemes/backgrounds'
+let g:netrw_dirhist_9='/home/aich/.scripts'

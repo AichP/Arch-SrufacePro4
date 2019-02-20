@@ -103,3 +103,10 @@ funciton hexcolor() {
 
   printf "\x1b[38;2;${blue};${red};${green}m\x1b[0m\x1b[38;2;${blue};${red};${green}m\x1b[0m\n"
 }
+
+export CURRWALL="/home/aich/.config/colorthemes/backgrounds/red/abstract-active-ash-235807.jpg"
+export CURRWALL='/home/aich/.config/colorthemes/backgrounds/red/abstract-active-ash-235807.jpg'
+export CURRWALL='/home/aich/.config/colorthemes/backgrounds/red/abstract-active-ash-235807.jpg'
+export CURRWALL='/home/aich/.config/colorthemes/backgrounds/red/abstract-active-ash-235807.jpg'
+export CURRWALL='/home/aich/.config/colorthemes/backgrounds/red/abstract-active-ash-235807.jpg'
+export CURRWALL='/home/aich/.config/colorthemes/backgrounds/red/abstract-active-ash-235807.jpg'

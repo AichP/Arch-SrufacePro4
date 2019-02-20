@@ -1,7 +1,7 @@
 [options]
 font = Notosansmono 12 
 #font = MaterialIcons 12
-cursor_shape = ibeam
+#cursor_shape = ibeam
 mouse_autohide = true
 [colors]
 

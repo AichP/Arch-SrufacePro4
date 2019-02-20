@@ -1,0 +1,9 @@
+Arangodb scripts zum daten einfügen
+//server ordner
+docker-compose build
+//database ordner
+docker-compose up -d
+docker ps //id kopieren
+docker exec -itdf id /bin/bash
+im sever ordner, beim versions ordner bei änderungen dort wos docker-compose file drinen is zuerst builden.
+

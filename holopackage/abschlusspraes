@@ -1,0 +1,30 @@
+kein update für hololens anwendung
+Module zusammengefügt.
+Hololens versucht automatisch auf den Server zu verbinden.
+patching funktion enthält auch reperatur funktion. Patching ist nur für Tablet Anwendung.
+Patching erfordert dass dateien auf Server liegen, egal welcher art. zb auch Google Drive.
+Patching inkludiert alle files, auch Scripts.
+Patching ansicht hat der Kunde wenn anwendung auf Tablet gestartet wird.
+Patching funktioniert nicht für UWP.
+Im Hintergrund läuft tablet programm, im Hitnergrund ist server gstartet, der nachrichten in das netzwerk schickt.
+Update funktionalität für Brillen ist nur placeholder. Update scene nicht wirklich gebraucht. Da auch tablet update button durch patch ersetzt.
+Speichern der Szenarios noch nicht implementiert.
+State 1 Panzer von A nach B
+state 2 am Eck schießt er
+state 3 zurückfahren
+state 4 explodiert.
+Save szenario
+Wird in datenbank gespeichert
+mittels instructor wird auf szenarios zugegriffen.
+in dem Szenarios sind dann die 4 States drinnen
+
+Neue Modelle direkt über Datenbank einfügen.
+Eine Datenbank für alle Auftraggeber
+Datalog file, wird in der DAtenbank erstellt, gibt aber keine Anzeige.
+UWP Build?
+UWP verion ist hololens
+Tablet version kann auch als UWP gebuildet werden. Je nach Build target.
+
+Tablet hololens verbidnung funktioniert automatisch.
+Lens horcht auf broadcasts von server. Server broadcastet ständig.
+

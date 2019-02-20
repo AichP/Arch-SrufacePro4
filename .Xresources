@@ -28,6 +28,8 @@ rofi.sidebar-mode: true
 rofi.disable-history: false
 rofi.dpi: 180
 rofi.click-to-exit: false
+rofi.sort: true
+
 !-X11 Settings-----------------------------------------------
 Xft.dpi: 180
 Xft.autohint: 0

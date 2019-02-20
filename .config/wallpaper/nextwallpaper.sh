@@ -1,8 +1,8 @@
 #!/bin/bash
-files=(/home/aich/.wallpaper/wallpapers/*)
+files=(/home/aich/.config/colorthemes/backgrounds/red/*)
 
 if [ -z $CURRWALL ]; then
-  CURRWALL=null
+  CURRWALL="null"
   echo "set CURRWALL to null"
   export -p $CURRWALL
 fi
@@ -13,14 +13,14 @@ if (( $CURRWALL != "null" )); then
   
   for wall in "${files[@]}"
   do
-    $currewallindex=$currwallindex + 1
+    currewallindex=$currwallindex + 1
     if [ $wall = $CURRWALL ]; then
 	break		
     fi
   done
 fi
-echo "currwal is = $CURRWALL"
 CURRWALL=${files[$currwallindex]}
-export -p $CURRWALL
+echo "currwal is = $CURRWALL"
+echo "export CURRWALL='$CURRWALL'" >> /home/aich/.zshrc 
 feh --bg-scale ${files[$currwallindex]}
 

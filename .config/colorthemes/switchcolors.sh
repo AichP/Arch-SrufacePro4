@@ -3,29 +3,11 @@
 xorig="/home/aich/.Xresources"
 termorig="/home/aich/.config/termite/config"
 i3orig="/home/aich/.config/i3/config"
+backgrounds=(/home/aich/.config/colorthemes/backgrounds/$1/*)
 
-if [ $1 = "blue" ]
-then
-	xres="/home/aich/.config/colorthemes/Xblue"
-	term="/home/aich/.config/colorthemes/termblue"
-	i3="/home/aich/.config/colorthemes/i3blue"
-	background="/home/aich/.config/colorthemes/backgrounds/blue.jpg"
-elif [ $1 = "red" ]
-then
-	xres="/home/aich/.config/colorthemes/Xred"
-	term="/home/aich/.config/colorthemes/termred"
-	i3="/home/aich/.config/colorthemes/i3red"
-	background="/home/aich/.config/colorthemes/backgrounds/red.png"
-elif [ $1 = "green" ]
-then
-	xres="/home/aich/.config/colorthemes/Xgreen"
-	term="/home/aich/.config/colorthemes/termgreen"
-	i3="/home/aich/.config/colorthemes/i3green"
-	background="/home/aich/.config/colorthemes/backgrounds/green.jpg"
-elif [ $1 = "yellow" ]
-then
-	echo "yellow"
-fi
+xres="/home/aich/.config/colorthemes/X$1"
+term="/home/aich/.config/colorthemes/term$1"
+i3="/home/aich/.config/colorthemes/i3$1"
 
 # Change Xresources
 while read i
@@ -57,8 +39,10 @@ do
 	sed -in "/$sedpointer/c$sedi" $i3orig
 done <$i3
 
-feh --bg-scale $background
-cp $background /home/aich/.config/wallpaper/wallpapers/wall1.jpg
+wallpaper=$(printf "%s\n" "${backgrounds[RANDOM % ${#backgrounds[@]}]}")
+echo $wallpaper
+feh --bg-scale $wallpaper
+cp $wallpaper /home/aich/.config/wallpaper/wallpapers/wall1.jpg
 xrdb ~/.Xresources
 killall -USR1 termite
 i3-msg reload

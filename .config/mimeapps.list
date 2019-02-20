@@ -1,0 +1,6 @@
+[Added Associations]
+text/plain=vim.desktop;
+application/x-keepass2=org.keepassxc.KeePassXC.desktop;
+image/x-canon-cr2=feh.desktop;darktable.desktop;gimp.desktop;
+image/jpeg=feh.desktop;darktable.desktop;
+application/pdf=xournal.desktop;firefox.desktop;inkscape.desktop;

@@ -1,5 +1,5 @@
 #!/bin/bash
-files=(/home/aich/.config/wallpaper/wallpapers*)
+files=(/home/aich/.config/wallpaper/wallpapers/*)
 wallpaper=$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")
 #echo $wallpaper
 

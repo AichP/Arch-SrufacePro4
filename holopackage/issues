@@ -1,0 +1,13 @@
+#131
+squenece file path event attribute.
+Spalte im Event. Spalte gibts nicht in dre domäne und nicht in der Datenbank
+#127
+Liste von events. Event wählen für das event wird sequence file path geqählt. Beim Drücken sollen die nächsten events kommen
+#126
+Adding Feedback to protocol
+#124
+#126 nicht nur senden sonder auch speichern
+Generell: Json protokoll, da sind alle events die passiert sind.
+Alle Kommentare und alle system messages.
+
+
